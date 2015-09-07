@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MHL-qe-j3m">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+    </dependencies>
+    <scenes>
+        <!--First Table View Controller-->
+        <scene sceneID="IMk-Ln-VNd">
+            <objects>
+                <viewController id="MHL-qe-j3m" customClass="FirstTableViewController" customModule="TestingTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cdc-Zf-A2v"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gmp-i2-JEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hjh-vw-Wxz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-IW-JaV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gbp-ex-w4g">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gbp-ex-w4g" id="XXX-X1-bAz">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MHL-qe-j3m" id="cTd-lK-JEJ"/>
+                                    <outlet property="delegate" destination="MHL-qe-j3m" id="0it-eH-cxd"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7U-2V-9aR">
+                                <rect key="frame" x="20" y="554" width="495" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z8G-J0-Lzp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G56-cs-k5p">
+                                <rect key="frame" x="543" y="554" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="np0-aR-xFB"/>
+                                    <constraint firstAttribute="height" constant="30" id="yMF-5r-T3z"/>
+                                </constraints>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postButtonPress:" destination="MHL-qe-j3m" eventType="touchUpInside" id="ZkT-cN-mhG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="G56-cs-k5p" secondAttribute="trailing" constant="20" id="4HX-Cc-ZE1"/>
+                            <constraint firstItem="G56-cs-k5p" firstAttribute="leading" secondItem="e7U-2V-9aR" secondAttribute="trailing" constant="28" id="6vD-EK-NRw"/>
+                            <constraint firstItem="8q1-IW-JaV" firstAttribute="top" secondItem="hjh-vw-Wxz" secondAttribute="top" id="EaW-xt-2UJ"/>
+                            <constraint firstAttribute="trailing" secondItem="8q1-IW-JaV" secondAttribute="trailing" id="JBF-P1-tnu"/>
+                            <constraint firstItem="Gmp-i2-JEP" firstAttribute="top" secondItem="e7U-2V-9aR" secondAttribute="bottom" constant="16" id="LZX-F2-1LB"/>
+                            <constraint firstItem="e7U-2V-9aR" firstAttribute="leading" secondItem="hjh-vw-Wxz" secondAttribute="leading" constant="20" id="OX3-gc-Q1r"/>
+                            <constraint firstItem="Gmp-i2-JEP" firstAttribute="top" secondItem="G56-cs-k5p" secondAttribute="bottom" constant="16" id="RgU-uL-saa"/>
+                            <constraint firstItem="e7U-2V-9aR" firstAttribute="top" secondItem="8q1-IW-JaV" secondAttribute="bottom" constant="8" id="ewB-4c-eDf"/>
+                            <constraint firstItem="8q1-IW-JaV" firstAttribute="leading" secondItem="hjh-vw-Wxz" secondAttribute="leading" id="joR-mw-elA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="e7U-2V-9aR" id="obG-hG-oSd"/>
+                        <outlet property="tableView" destination="8q1-IW-JaV" id="MNu-mU-JaG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1N-dh-qDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517" y="-548"/>
+        </scene>
+    </scenes>
+</document>
